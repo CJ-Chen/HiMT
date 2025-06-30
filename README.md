@@ -41,7 +41,7 @@ himt -h
 
 ## Installation on Windows
 ### Command Line  
-Click the [link](https://github.com/tang-shuyuan/HiMT/releases/download/v1.0.9/himt.zip) to download the HiMT Windows version.You can use HiMT via Windows Command Prompt (CMD) or PowerShell.
+Click the [link](https://github.com/tang-shuyuan/HiMT/releases/download/v1.0.9/himt_windows.zip) to download the HiMT Windows version.You can use HiMT via Windows Command Prompt (CMD) or PowerShell.
 ![image](https://github.com/user-attachments/assets/2f647c08-2515-44a2-b071-39b459d086c7)
 
 
@@ -68,7 +68,7 @@ conda activate himt
 conda install shuyuan_tang::himt -c bioconda
 ```
 ### Out-of-box
-download [MacOS aarch64](https://github.com/tang-shuyuan/HiMT/releases/download/v1.0.7/himt_macos_aarch64.tar.gz) version  
+download [MacOS aarch64](https://github.com/tang-shuyuan/HiMT/releases/download/v1.0.9/himt_macos.arm64.tar.gz) version  
 download [MacOS x86](https://github.com/tang-shuyuan/HiMT/releases/download/v1.0.7/himt_macos_x86_64.tar.gz) version
 ## Dependencies
 ```
