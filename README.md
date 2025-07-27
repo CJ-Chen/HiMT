@@ -165,7 +165,7 @@ himt assemble -i demo.fa -o output -t 10
 2. If you occasionally notice incomplete mitochondrial genome assemblies with HiMT, you can try the following commands:
 
 ```
-himt assemble -i input_file -o output -fp 0.2 -x 50 -p 0.5
+himt assemble -i hifi.fa -o output_dir -fp 0.2 -x 40
 ```
 
 3. To assemble animal mitogenome
