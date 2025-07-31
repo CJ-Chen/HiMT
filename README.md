@@ -172,7 +172,7 @@ If you find insufficient computer memory when running on Windows.
 ```
 himt assemble -i hifi.fa -o output_dir -b 4
 ```
-##### 2 Assemble plant organelle genomes using HiFi data.(HiMT support fa/fq/fa.gz/fq.gz)
+##### 2 Assemble plant organelle genomes using ONT/CLR data.
 ```
 ##For uncorrected ONT or CLR data (parameters may require multiple attempts)：
 himt assemble -i hifi.fa -o output_dir -d ONT/CLR -c 0.3
