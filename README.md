@@ -155,23 +155,37 @@ Optional arguments:
 
 #### Examples
 
-
-1. Run himt to assemble plant organelle genomes(HiMT support fa/fq/fa.gz/fq.gz)
+##### 1 Assemble plant organelle genomes using HiFi data.(HiMT support fa/fq/fa.gz/fq.gz)
 
 ```
-himt assemble -i demo.fa -o output -t 10
+himt assemble -i hifi.fa -o output_dir -t 10
 ```
 
-2. If you occasionally notice incomplete mitochondrial genome assemblies with HiMT, you can try the following commands:
+If you occasionally notice incomplete mitochondrial genome assemblies with HiMT, you can try the following commands:
 
 ```
 himt assemble -i hifi.fa -o output_dir -fp 0.2 -x 40
 ```
 
-3. To assemble animal mitogenome
+If you find insufficient computer memory when running on Windows.
 
 ```
-himt assemble -i input_file -o output_dir -s animal
+himt assemble -i hifi.fa -o output_dir -b 4
+```
+##### 2 Assemble plant organelle genomes using HiFi data.(HiMT support fa/fq/fa.gz/fq.gz)
+```
+##For uncorrected ONT or CLR data (parameters may require multiple attempts)：
+himt assemble -i hifi.fa -o output_dir -d ONT/CLR -c 0.3
+
+##For corrected ONT/CLR data (quality ≥ Q20):
+himt assemble -i hifi.fa -o output_dir -d ONT/CLR
+
+##When encountering insufficient memory on Windows:
+himt assemble -i hifi.fa -o output_dir -d ONT/CLR -b 4
+```
+##### 3 Assemble animal organelle genomes using HiFi data.
+```
+himt assemble -i hifi.fa -o output_dir -s anima
 ```
 
 #### Main output files
