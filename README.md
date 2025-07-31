@@ -185,7 +185,7 @@ himt assemble -i hifi.fa -o output_dir -d ONT/CLR -b 4
 ```
 ##### 3 Assemble animal organelle genomes using HiFi data.
 ```
-himt assemble -i hifi.fa -o output_dir -s anima
+himt assemble -i hifi.fa -o output_dir -s animal
 ```
 
 #### Main output files
