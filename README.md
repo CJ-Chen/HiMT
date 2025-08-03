@@ -175,17 +175,17 @@ himt assemble -i hifi.fa -o output_dir -b 4
 ##### 2 Assemble plant organelle genomes using ONT/CLR data.
 ```
 ##For uncorrected ONT or CLR data (parameters may require multiple attempts)：
-himt assemble -i hifi.fa -o output_dir -d ONT/CLR -c 0.3
+himt assemble -i input.fa -o output_dir -d ONT/CLR -c 0.3
 
 ##For corrected ONT/CLR data (quality ≥ Q20):
-himt assemble -i hifi.fa -o output_dir -d ONT/CLR
+himt assemble -i input.fa -o output_dir -d ONT/CLR
 
 ##When encountering insufficient memory on Windows:
-himt assemble -i hifi.fa -o output_dir -d ONT/CLR -b 4
+himt assemble -i input.fa -o output_dir -d ONT/CLR -b 4
 ```
 ##### 3 Assemble animal organelle genomes using HiFi data.
 ```
-himt assemble -i hifi.fa -o output_dir -s animal
+himt assemble -i input.fa -o output_dir -s animal
 ```
 
 #### Main output files
@@ -305,3 +305,42 @@ Support fasta format and gfa format
 himt compare -q genome1.fa/gfa -r genome2.fa/gfa -o output
 ```
 
+### Refassemble
+If you have a reference genome available and wish to extract sequences based on this reference for assembly (a method typically applied to animal mitochondria and plant chloroplasts), you can accomplish this using the following functionality.
+```
+usage: himt compare [argument]
+please use 'himt refassemble -h or --help' to show help information
+
+Obtain data via reference genome and assemble
+
+Required arguments:
+  -i INPUT_FILE, --input_file INPUT_FILE
+                        Input file
+  -r REF_GENOME, --ref_genome REF_GENOME
+                        Input reference genome
+  -o OUTPUT_DIR, --output_dir OUTPUT_DIR
+                        Output directory
+
+Optional arguments:
+  -h, --help            Show this help message and exit
+  -d {HiFi,CLR,ONT}, --data_type {HiFi,CLR,ONT}
+                        default=HiFi,Choose your sequencing data type (HiFi,CLR or ONT)
+  -c {mitochondrial,chloroplast}, --category {mitochondrial,chloroplast}
+                        select the category of organelles
+  -s {plant,animal}, --species {plant,animal}
+                        Species category,only can be plant or animal (default=plant)
+  -l LENGTH, --length LENGTH
+                        filter reads with mapping length below this value (default: 0)
+  -p PERCENT, --percent PERCENT
+                        extract reads with mapping length pencentage >= this value (default: 0.6)
+  -t THREAD, --thread THREAD
+                        default=2 ,The number of threads used for flye assembly
+  --no_flye_meta        By default, we use flye Meta pattern to assemble the mitochondrial genome. If you don't want
+                        to use meta pattern, add this parameter.
+```
+
+#### Examples
+
+```
+himt refassemble -i input.fa -r reference.fa -o output_dir -s plant/animal
+```
